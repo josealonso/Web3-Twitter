@@ -53,7 +53,7 @@ const Rightbar = () => {
             return (
               <>
                 <div className="trend" onClick={() => window.open(e.link)} >
-                  <img src={e.img} alt="announcement" className="trendImg"></img>
+                  <img src={e.img} alt="advertisement" className="trendImg"></img>
                   <div className="trendText">{e.text}</div>
                 </div>
               </>
