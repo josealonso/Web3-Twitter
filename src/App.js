@@ -6,26 +6,30 @@ import Settings from "./pages/Settings";
 import Sidebar from "./components/Sidebar";
 import Rightbar from "./components/Rightbar";
 import "./App.css";
+import Moralis from "moralis";
 import { useMoralis } from "react-moralis";
 import { ConnectButton, Icon } from "web3uikit";
+import { MORALIS_APP_ID, MORALIS_SERVER_URL } from './config/config';
 
-const App = () => {
-  const { isAuthenticated, Moralis } = useMoralis();
+const App = async () => {
+  await Moralis.start({ apiKey: MORALIS_APP_ID });
+  const { web3, enableWeb3, chainId, isWeb3Enabled } = useMoralis();
+  // const { isAuthenticated, Moralis } = useMoralis();
 
   return (
     <>
-      {isAuthenticated ?
+      {web3 ?
         (
           <div className="page">
             <div className="sideBar">
               <Sidebar />
               <div
-                className="logout"
-                onClick={() => {
-                  Moralis.User.logOut().then(() => {
-                    window.location.reload();
-                  });
-                }}
+              // className="logout"
+              // onClick={() => {
+              //   Moralis.User.logOut().then(() => {
+              //     window.location.reload();
+              //   });
+              // }}
               >
                 Logout
               </div>
@@ -46,6 +50,7 @@ const App = () => {
             <Icon fill="#ffffff" size={40} svg="twitter" />
             <ConnectButton />
           </div>
+
         )}
     </>
   );
