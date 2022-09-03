@@ -10,7 +10,7 @@ const Profile = () => {
   return (
     <>
       <div className="pageIdentify">Profile</div>
-      <img className="profileBanner" alt="" src={defaultImgs[1]}>Home</img>
+      <img className="profileBanner" alt="" src={defaultImgs[1]}></img>
       <div className="pfpContainer">
         <img className="profilePFP" alt="" src={defaultImgs[0]}></img>
         <div className="profileName">Julian</div>
