@@ -20,6 +20,7 @@ const Home = () => {
 
   return (
     <>
+      <div className="pageIdentify">Home</div>
       <div className="mainContent">
         <div className="profileTweet">
           <img
@@ -60,7 +61,7 @@ const Home = () => {
 
           </div>
         </div>
-        <TweetInFeed profile={false}/>
+        <TweetInFeed profile={false} />
       </div>
     </>
   );
